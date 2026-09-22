@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  line-height: 1.5;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #222;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.header p {
+  color: #666;
+  font-size: 15px;
+}
+
+.section {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+button {
+  padding: 11px 20px;
+  border: 1px solid #222;
+  border-radius: 3px;
+  background: #222;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+}
+
+.generated {
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border: 1px solid #b8c7d9;
+  background: #f1f5f9;
+}
+
+.generated strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: #555;
+}
+
+.generated a {
+  color: #174ea6;
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.generated a:hover {
+  text-decoration: underline;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #f2f2f2;
+  border-top: 1px solid #ccc;
+  font-weight: 600;
+  color: #333;
+}
+
+tbody tr:hover {
+  background: #fafafa;
+}
+
+.short-id {
+  color: #174ea6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.short-id:hover {
+  text-decoration: underline;
+}
+
+.redirect-url {
+  max-width: 400px;
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 94%;
+    margin: 25px auto;
+  }
+
+  .section {
+    padding: 18px;
+  }
+
+  .header h1 {
+    font-size: 27px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+  }
+}

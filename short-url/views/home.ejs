@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>URL Shortener</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>URL Shortener</h1>
+        <p>Create short links and keep track of their clicks.</p>
+      </header>
+
+      <section class="section">
+        <h2>Create a Short URL</h2>
+
+        <% if (locals.id) { %>
+          <div class="generated">
+            <strong>URL Generated:</strong>
+            <a
+              href="http://localhost:8001/<%= id %>"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              http://localhost:8001/<%= id %>
+            </a>
+          </div>
+        <% } %>
+
+        <form method="post" action="/url">
+          <label for="url">Enter your original URL</label>
+
+          <div class="form-row">
+            <input
+              id="url"
+              type="url"
+              name="url"
+              placeholder="https://example.com"
+              required
+            />
+
+            <button type="submit">Generate</button>
+          </div>
+        </form>
+      </section>
+
+      <% if (locals.urls) { %>
+        <section class="section">
+          <h2>Shortened URLs</h2>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Short ID</th>
+                  <th>Redirect URL</th>
+                  <th>Clicks</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% urls.forEach((url, index) => { %>
+                  <tr>
+                    <td><%= index + 1 %></td>
+
+                    <td>
+  <a
+    class="short-id"
+    href="http://localhost:8001/<%= url.shortId %>"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <%= url.shortId %>
+  </a>
+</td>
+
+                    <td class="redirect-url" title="<%= url.redirectURL %>">
+                      <%= url.redirectURL %>
+                    </td>
+
+                    <td><%= url.visitHistroy.length %></td>
+                  </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      <% } %>
+    </main>
+  </body>
+</html>
